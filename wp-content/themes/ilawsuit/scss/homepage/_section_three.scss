@@ -1,0 +1,179 @@
+#section_three {
+
+}
+
+.sec_three_inner {
+	text-align: center;
+	padding:115px 25px;
+}
+
+
+.sec_three_tabs {
+	display: flex;
+	max-width:709px;
+	margin:42px auto 0;
+}
+
+
+.sec_three_tab {
+	text-transform: uppercase;
+	color:#000;
+	font-size: 16px;
+	letter-spacing: 0.25em;
+	padding:20px 0px;
+	background: $offwhite;
+	transition: all 200ms ease-in-out;
+	border:2px solid #e6e6e6;
+	cursor: pointer;
+	@include montserrat_extrabold;
+	&:hover {
+		background: $bluetwo;
+		color:#fff;
+		border:2px solid $bluetwo;
+	}
+}
+
+
+.sec_three_tab.active {
+	background: $bluetwo;
+	color:#fff;
+	border:2px solid $bluetwo;
+}
+
+
+.sec_three_area_tab {
+	flex-basis:270px;
+}
+
+.sec_three_state_tab {
+	flex-basis:210px;
+	margin-left:-2px;
+}
+
+.sec_three_city_tab {
+	flex-basis:227px;
+	margin-left:-2px;
+}
+
+
+
+.sec_three_list_wrapper {
+	max-width:1505px;
+	margin:72px auto 0;
+	min-height:700px;
+	opacity: 1;
+	transition: all 300ms ease-in-out;
+	
+}
+
+
+
+.sec_three_list_wrapper.hide, a.view_all_button.hide {
+	opacity: 0;
+}
+
+
+.sec_three_list {
+	display: none;
+}
+
+a.view_all_button {
+	color:$bluetwo;
+	text-transform: lowercase;
+	font-size:25px;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	font-family: $prata;
+	border:2px solid $bluetwo;
+	display: inline-block;
+	padding:23px 60px;
+	transition: all 200ms ease-in-out;
+	margin-top:60px;
+	opacity: 1;
+	transition: all 300ms ease-in-out;
+	&:hover {
+		background: $bluetwo;
+		color:#fff;
+	}
+}
+
+
+@media screen and (max-width: 1450px) {
+	
+	
+	
+	
+	.sec_three_list_wrapper {
+		max-width: 1210px;
+		
+	}
+
+	
+	
+} /* Media Query */
+
+
+
+@media screen and (max-width: 1066px) {
+	
+	
+	.sec_three_tab {
+		font-size:15px;
+		padding: 17px 0px;
+	}
+	
+	.sec_three_inner {
+		padding-left:60px;
+		padding-right:60px;
+	}
+	
+	.sec_three_list_wrapper {
+		
+	}
+	
+	
+	
+	
+} /* Media Query */
+
+
+
+
+@media screen and (max-width: 767px) {
+	
+	.sec_three_tabs {
+		display: block;
+		max-width: 260px;
+	}
+	
+	.sec_three_tab {
+		font-size: 14px;
+		text-align: center;
+		padding-left:40px;
+		padding-right:40px;
+	}
+	
+	.sec_three_inner {
+    padding: 82px 40px;
+	}
+	
+	.sec_three_state_tab, .sec_three_city_tab {
+		margin:-2px 0 0 0;
+	}
+	
+	
+	
+} /* Media Query */
+
+
+
+@media screen and (max-width: 700px) {
+	
+	
+	.sec_three_list_wrapper {
+		
+		
+	}
+	
+	
+} /* Media Query */

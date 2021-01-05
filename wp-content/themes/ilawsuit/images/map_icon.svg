@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="23.02" height="32.87" viewBox="0 0 23.02 32.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcfcfc;
+      }
+
+      .cls-2 {
+        fill: #2117dc;
+      }
+    </style>
+  </defs>
+  <title>map_icon</title>
+  <rect class="cls-1" x="2.94" y="7.78" width="17.79" height="11.69"/>
+  <path class="cls-2" d="M.73.57V33.44l11.51-7.5,11.51,7.5V.57ZM16,20l-3.79-2-3.8,2,.73-4.23-3.07-3,4.25-.62,1.9-3.84,1.91,3.84,4.25.62-3.07,3Z" transform="translate(-0.73 -0.57)"/>
+</svg>

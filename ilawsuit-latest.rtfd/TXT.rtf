@@ -1,0 +1,1909 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2576
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Bold;
+\f3\froman\fcharset0 Times-BoldItalic;\f4\fswiss\fcharset0 ArialMT;\f5\fnil\fcharset0 Verdana;
+\f6\froman\fcharset0 Palatino-Roman;\f7\fnil\fcharset0 LucidaGrande;\f8\fswiss\fcharset0 Helvetica-Bold;
+\f9\fmodern\fcharset0 CourierNewPSMT;\f10\fmodern\fcharset0 CourierNewPS-BoldMT;\f11\fmodern\fcharset0 Courier;
+\f12\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red22\green21\blue22;\red255\green255\blue255;\red78\green77\blue78;
+\red246\green246\blue246;\red0\green0\blue0;\red22\green21\blue22;\red18\green79\blue146;\red234\green234\blue234;
+\red115\green115\blue115;\red22\green21\blue22;\red0\green0\blue233;\red26\green26\blue26;\red38\green38\blue38;
+\red27\green29\blue31;\red51\green51\blue51;\red245\green245\blue245;\red63\green105\blue30;\red255\green0\blue0;
+\red57\green57\blue57;\red236\green236\blue236;\red240\green240\blue245;}
+{\*\expandedcolortbl;;\cssrgb\c11373\c10980\c11373;\cssrgb\c100000\c100000\c100000;\cssrgb\c38039\c37647\c38039;
+\cssrgb\c97255\c97255\c97255;\cssrgb\c0\c0\c0;\cssrgb\c11373\c10980\c11373\c70196;\cssrgb\c7059\c39216\c63922;\cssrgb\c93333\c93333\c93333;
+\cssrgb\c52549\c52549\c52549;\cssrgb\c11373\c10980\c11373\c52157;\cssrgb\c0\c0\c93333;\cssrgb\c13333\c13333\c13333;\cssrgb\c20000\c20000\c20000;
+\cssrgb\c14118\c15294\c16078;\cssrgb\c25882\c25882\c25882;\cssrgb\c96863\c96863\c96863;\csgenericrgb\c24706\c41176\c11765;\csgenericrgb\c100000\c0\c0;
+\cssrgb\c29020\c29020\c29020;\cssrgb\c94118\c94118\c94118;\cssrgb\c95294\c95294\c96863;}
+\margl1440\margr1440\vieww25740\viewh25200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 [05-Dec-2020 00:40:11 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/customer/www/lawyersnearme.io/public_html/wp-content/themes/ilawsuit/page-templates/template-locations_city_pa.php on line 226\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Ok for the Lawyer Directory.. looking through my notes, I have:\
+\
+Work on combining some of the weirdly named Practice Areas in to one common pa (i.e divorces, divorce, divorce-pa and other random ones into just \'93divorce\'94\
+\
+The dashboard is slow because alot of interfaces are constantly trying to load the long lists of pa\'92s or lawyer posts somewhere onto the editor (i.e. when on a lawyer post backend, it will load all pa terms, so you can add an existing term if you want in the editor sidebar, things like that. I will work on maybe turning these off, or only calling them we we need to. Maybe load them up only if you wanr to actually add a term with onclick or something. This will speed it up. Also will increase the memory on the site, and play around more with the cache that comes with siteground\
+\
+Need to implement a cropping function for profile uploads. I think I found a good one\
+\
+Need to wrap up building out the SEO/schema meta structure for each template. Hard to explain but yoast might not work with all of virtual/custom permalink structures we have in place (for city, state pa category pages) . Shouldn\'92t be hard to just look at the page source of yoast and implement ourselves.\
+\
+Geocode is mostly done but I need to upload the addresses with poorly formatted suite numbers. Suite, #, ste etc. was breaking the geocode at u.s census site. They like to have a comma before the suite number too in order for bulk updates to work correctly. I did this, now just need to upload those changes to the live site so all the addresses will show up on the maps.\
+\
+I think Jenna made a new homepage mockup awhile back? I will take a look at that.
+\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \
+\
+\
+set up acf-json\
+\
+look through \'93latest\'94 root folder in browser to see if there anything in there I need to do \
+\
+ok I put the goods on the server. Its under production>production>mike projects>lawyer directory\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+
+\fs24 \cf4 \cb3 \
+\
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1X75V6Q7/p1587752227003200"}}{\fldrslt 11:17}}
+\fs30 \cf2 \cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \cb3 It's now called TeleLegal\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1X75V6Q7/p1587752239003600"}}{\fldrslt 
+\fs24 \cf4 \cb3 11:17}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \cb3 I places the new assets in the assets folder\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1X75V6Q7/p1587752300004800"}}{\fldrslt 
+\fs24 \cf4 \cb5 11:18}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf2 \cb5 I used the same blob shape for all of them, just scalled and rotated differently. I saved out two, since they had different rotations, but they are the same across the devices just scaled differently\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\fs30 \cf6 \cb3 \expnd0\expndtw0\kerning0
+so free users. even free should be able to sign in and do some stuff\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590480000800"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:21}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 much less than other levels\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590494001300"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:21}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 but this way we are giving some value to people\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590615002000"}}{\fldrslt 
+\fs24 \cf4 2:23 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Yeah sounds good what types of info should they be able to update?\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590671002300"}}{\fldrslt 
+\fs24 \cf4 2:24 PM}}\cb1 \
+\cb3 where can i see the full list\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590681002600"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:24}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 wp admin?\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590726003400"}}{\fldrslt 
+\fs24 \cf4 2:25 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Search my name i think mine has a full premium set up\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590780003600"}}{\fldrslt 
+\fs24 \cf4 2:26 PM}}\cb1 \
+\cb3 did we get it all geocoded\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590892006000"}}{\fldrslt 
+\fs24 \cf4 2:28 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 I need to run one more pass through the api and the suites will be ready, i had to search and replace alot of the info in spreasheet bc they were originally hand typed so differently\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587590969006500"}}{\fldrslt 
+\fs24 \cf4 2:29 PM}}\cb1 \
+\cb3 do you knw wha the features are of teh cheaper paid one\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591087008800"}}{\fldrslt 
+\fs24 \cf4 2:31 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Everything in the sidebar is basic and then alregular bio for content too. Premium has all those specific questions you had me build out awhile ago, faqs, case results etc\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591109009500"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:31}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 And a place at the top of search and and special pin on map\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591199010300"}}{\fldrslt 
+\fs24 \cf4 2:33 PM}}\cb1 \
+\cb3 maybe we let free listing edit everythign above the \'93case results\'94\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591256011100"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:34}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 basically free for now should be anything that a regular bio offers.\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591279011800"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:34}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 and maybe we can add other stuff to the cheaper paid and premium paid\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591463012600"}}{\fldrslt 
+\fs24 \cf4 2:37 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Yeah that sounds good\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591505012900"}}{\fldrslt 
+\fs24 \cf4 2:38 PM}}\cb1 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\fs26 \cf7 \cb3 image.png
+\fs30 \'a0\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F0125D7NRNJ/image.png"}}{\fldrslt \cf8 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F0125D7NRNJ/download/image.png"}}{\fldrslt 
+\f3\i\b\fs26 \cf2 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\i\b\fs26 \cf2 \
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\i0\b0\fs30 \cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb9 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb1 \
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591512013300"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:38}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 how do we edit the list that appears on this dropdown menu\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591522013700"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:38}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 and that home page image\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591551014500"}}{\fldrslt 
+\fs24 \cf4 2:39 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 That is just an acf field list on the back of the homepage\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591571015000"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:39}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 It lists terms\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591674017800"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:41}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 I think I remember you saying the divorce one wasnt working which means the original data disnt have divorce set up. Some are closely named but repetitive. Like divorce divorce-separation etc so maby i can a way to consolidate and rename some weird onea
+\fs26 \cf10 \uc0\u8234 \'a0(edited)\'a0
+\fs30 \cf6 \cb1 \uc0\u8236 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591696018100"}}{\fldrslt 
+\fs24 \cf4 2:41 PM}}\cb1 \
+\cb3 yea maybe something we run by rob\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591702018400"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:41}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 figure out how to merge certain ones\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591709018600"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:41}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 how many total categories?\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591753019600"}}{\fldrslt 
+\fs24 \cf4 2:42 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Looots go to the dashboard\'97> lawyers \'97> practice area category\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591919021300"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:45}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Some similar.. but different. i can prob figure out how to combine, i learned a ton of mysql when converting addresses to lat long\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591937021700"}}{\fldrslt 
+\fs24 \cf4 2:45 PM}}\cb1 \
+\cb3 yea there is\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591951022100"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:45}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 i need to convert this site to a \'93TeleLegal\'94 - work with lawyers remotely\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591956022300"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:45}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 covid friendly\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591958022500"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:45}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 lol\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587591968022800"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:46}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 same site. just different messaging on the front\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592008023700"}}{\fldrslt 
+\fs24 \cf4 2:46 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Hahah yeah you should. Make the directory into a pwl theme and pump them out\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592028024000"}}{\fldrslt 
+\fs24 \cf4 2:47 PM}}\cb1 \
+\cb3 dude that could literally work\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592048024600"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:47}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 get lawyers to sign up saying this is limited to firms that can handle cases remotely\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592058024800"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:47}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 which is pretty much all of them\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592070025300"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:47}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 but consumers want remote and not in person\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592075025600"}}{\fldrslt 
+\fs24 \cf4 2:47 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 Hell yeah good idea!\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592092025900"}}{\fldrslt 
+\fs24 \cf4 2:48 PM}}\cb1 \
+\cb3 edit tagline on home page edit page?\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592189026700"}}{\fldrslt 
+\fs24 \cf4 2:49 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 i need to add an acf for that i think\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592199027000"}}{\fldrslt 
+\fs24 \cf4 \cb3 2:49}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 What do you want it to say\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587592289027200"}}{\fldrslt 
+\fs24 \cf4 2:51 PM}}\cb1 \
+\cb3 (on it right now thinking)\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594223027600"}}{\fldrslt 
+\fs24 \cf4 3:23 PM}}\cb1 \
+\cb3 this site struggles with the db size i think\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594231027900"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:23}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 everything is pretty slow\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594313028800"}}{\fldrslt 
+\fs24 \cf4 3:25 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 it seems alot slower lately for some reason, maybe i can tweak the cache settings in siteground\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594399029600"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:26}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 yeah it wasnt as slow as it is now ill check that\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594421030000"}}{\fldrslt 
+\fs24 \cf4 3:27 PM}}\cb1 \
+\cb3 i tried to test uploading a new image but nothing showing up on home\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594462030900"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:27}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 does it require webp image to work?\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594501031700"}}{\fldrslt 
+\fs24 \cf4 3:28 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 ok ill check. i do know that the backend might get slow whenever the pa terms need to get listed bc theres so many. so bc the homepage has that pa term list it has to reference aand call it in\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594528032000"}}{\fldrslt 
+\fs24 \cf4 3:28 PM}}\cb1 \
+\cb3 if we trim that list down and combine it would probably help\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594545032300"}}{\fldrslt 
+\fs24 \cf4 3:29 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 I can add in a webp fallback\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594567032700"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:29}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 yeah same with lawyer backend stuff, it calls those long lists in\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594575033000"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:29}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 single posts\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594792033600"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:33}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 we might just need to increase memory in php.ini\cb1 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\fs26 \cf7 \cb3 Screen Shot 2020-04-22 at 3.32.44 PM.png
+\fs30 \'a0\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F012JD5BFDJ/screen_shot_2020-04-22_at_3.32.44_pm.png"}}{\fldrslt \cf8 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F012JD5BFDJ/download/screen_shot_2020-04-22_at_3.32.44_pm.png"}}{\fldrslt 
+\f3\i\b\fs26 \cf2 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\i\b\fs26 \cf2 \
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\i0\b0\fs30 \cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb9 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb1 \
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594794033900"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:33}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 this is new error\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594830034200"}}{\fldrslt 
+\fs24 \cf4 3:33 PM}}\cb1 \
+\cb3 yea i got that when i tried to upload an image\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594841034900"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:34}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 that is most likely memory issue\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594842035000"}}{\fldrslt 
+\fs24 \cf4 3:34 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 i put in a webp and nows it there\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594861035400"}}{\fldrslt 
+\fs24 \cf4 \cb3 3:34}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 ill restart server, purge cache and increase php.ini stuff\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587594890035600"}}{\fldrslt 
+\fs24 \cf4 3:34 PM}}\cb1 \
+\cb3 nice\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587595011036400"}}{\fldrslt 
+\fs24 \cf4 3:36 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 also, want me to setup an easy way to update theme colors etc? i see the inputs on the top section are blue which could be changed if you want\cb1 \
+\pard\pardeftab720\sl540\qc\partightenfactor0
+
+\f2\b\fs26 \cf2 \cb3 Yesterday
+\fs28 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\fs30 \cf6 \
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587683092000100"}}{\fldrslt 
+\fs24 \cf4 4:04 PM}}\cb1 \
+\pard\pardeftab720\sl380\partightenfactor0
+
+\fs26 \cf7 \cb3 image.png
+\fs30 \'a0\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F012F39ULCS/image.png"}}{\fldrslt \cf8 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://files.slack.com/files-pri/T0A3SGD47-F012F39ULCS/download/image.png"}}{\fldrslt 
+\f3\i\b\fs26 \cf2 \
+}}\pard\pardeftab720\sl380\partightenfactor0
+
+\f3\i\b\fs26 \cf2 \
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\i0\b0\fs30 \cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb9 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb1 \
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587683121000800"}}{\fldrslt 
+\fs24 \cf4 \cb3 4:05}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 i mean that would be convenient (update colors)\cb1 \
+\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587683132001100"}}{\fldrslt 
+\fs24 \cf4 \cb3 4:05}}\
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 jenna mocked this up, looks pretty cool\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U1NUZD9TK"}}{\fldrslt 
+\f2\b \cf2 \cb3 garrettcullen}}\cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587683314001400"}}{\fldrslt 
+\fs24 \cf4 4:08 PM}}\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+\cf6 \cb3 yeah that looks clean!\cb1 \
+\
+\pard\pardeftab720\sl720\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl440\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://app.slack.com/team/U0A3SG19P"}}{\fldrslt 
+\f2\b \cf2 \cb3 mike\
+}}\pard\pardeftab720\sl440\partightenfactor0
+
+\f2\b \cf2 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f1\b0 \cf6 \cb3 \'a0\'a0{\field{\*\fldinst{HYPERLINK "https://1point21.slack.com/archives/D1S5WSSFM/p1587683725001600"}}{\fldrslt 
+\fs24 \cf4 4:15 PM}}\cb1 \
+\cb3 it does\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf6 \cb11 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb9 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f0\fs30 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \uc0\u8232 \cf6 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\fs24 \AppleTypeServices \cf0 \kerning1\expnd0\expndtw0 \
+\
+\
+add email confirmation\
+\
+\
+\
+big problem with the claim content logic, radio button claim free profile isnt in effect until a post gets updated. so both price tiers are showing up at the same time after i undo everything and log out. i need to rethink whatevr login i come u with break each price teir into a php include and load if needed so i dont have repetitive content this helps a little <?php if(is_singular('lawyer') && !is_user_logged_in() && !get_field('lawyer_premium_layout_two')) \{ ?> but it still shows the content as if the profile is still claimed sice the radio button is now forever checked  maybe a not claimed yet button will help for posts that are now registered under these radio buttons to pull them out of the claimed logic\
+\
+make map smaller,\
+maybe add male or female to new profiles\
+add icons where it says add logo and also on single profiles\
+map needs street names\
+have it recenter and square up based in pins\
+i think suites are working just by not having that extra comma, if i can just remove that i might be good\
+phone map - string of null - get rid of ({\field{\*\fldinst{HYPERLINK "https://att-directory.com/lawyer/allen-erenbaum/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \ulc12 https://att-directory.com/lawyer/allen-erenbaum/}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \ulc12 )\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone add we found 27 Los Angeles Business Lawyers near you\
+\
+add featured to search results\
+\
+will prob need to lose the lat long acf not sure, and also need to have my new numbers post to each post\
+\
+need new latlong to show up in custom field probably, oh and i need to think about that im using the lat long acf for new customers\'85\
+why is this breaking https://att-directory.com/lawyers-location/state/new-york/new-york-new-york-lawyers/\
+\
+\
+redirct ssl on live site\
+\
+clean code so its like this:\
+\
+<?php\
+class Fruit \{\
+  // Properties\
+  public $name;\
+  public $color;\
+\
+  // Methods\
+  function set_name($name) \{\
+    $this->name = $name;\
+  \}\
+  function get_name() \{\
+    return $this->name;\
+  \}\
+\}\
+\
+$apple = new Fruit();\
+$banana = new Fruit();\
+$apple->set_name('Apple');\
+$banana->set_name('Banana');\
+\
+echo $apple->get_name();\
+echo "<br>";\
+echo $banana->get_name();\
+?>\
+\
+maybe i just do my thing, then insert the  x y width and height as hidden field values, then run image crop, then resize in the gform post creation function. then i might need a similar function that I already have in there. instead of taking the file, somehow take my newly resized and cropped image and feed into the featured image part do it uploads into the media library. \
+\
+damn i need a way to have croppr use updated images or something, when i use this, and updated croppr has already been initiated  {\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/14069421/show-an-image-preview-before-upload"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://stackoverflow.com/questions/14069421/show-an-image-preview-before-upload}}\
+\
+1150 has sections that look way narrower than others\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/23945494/use-html5-to-resize-an-image-before-upload"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://stackoverflow.com/questions/23945494/use-html5-to-resize-an-image-before-upload}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+I like this idea but I dont fully grasp it ^ 1. can i add the x y coordinates from croppr to the canvas resize function he has? 2. What is he doing with  ajax, do I need that? or will gforms handle it from there?\
+\
+i could just use gforms as a hidden field for validation and do the rest in myown custom way, upload, open overlay, send crop values to server save it, add that url, then close overlay \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/38750612/crop-image-using-coordinates/#answer-38752414"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://stackoverflow.com/questions/38750612/crop-image-using-coordinates/#answer-38752414}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://jamesooi.design/Croppr.js/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://jamesooi.design/Croppr.js/}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://foliotek.github.io/Croppie/"}}{\fldrslt \cf12 https://foliotek.github.io/Croppie/}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://fengyuanchen.github.io/cropperjs/"}}{\fldrslt \cf12 https://fengyuanchen.github.io/cropperjs/}}
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+divorce is only on one post on the whole need an easy way to bulk edit that\
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://stackoverflow.com/questions/22087076/how-to-make-a-simple-image-upload-using-javascript-html}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+city isnt mapping correctly on form 11 9 works though, its gotta be something above 11 in the functions ok confirmed that its something above, its wokring when remove all, I need to see whats breaking it \
+\
+this one not working now:\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://lawyersnearme.io/lawyers-practice/business-lawyers/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://lawyersnearme.io/lawyers-practice/business-lawyers/}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+test levels esp memcached\
+\
+faqs and case results on mobile cant be over the top\
+\
+need some sort of stripe success or stop after it times out after awhile so the process page doesnt hang\
+\
+\
+does each form need a different stripe endpoint?\
+\
+\
+Here are some basic notes but I was hoping to have you just go through it and find what makes sense and what is confusing from a user\'92s standpoint. Try to Claim a Free Profile, then upgrade it again to a Basic Prfofile, Then Upgrade it again to a premium theme.\
+\
+screenshots\
+\
+We can change but here is what I have for levels:\
+\
+1. Claim Profile - Free \
+ability to change the name, slug, add email, create a user account, and upgrade if they choose. No editing abilities beyond that.\
+2. Basic - Ability to change anything they want. upgrade to premium \
+3. Premium layout , also makes the profile a \'93featured post\'94 this adds the profile to the top of directory results\
+\
+Payments:\
+\
+Paypal Stripe Dilemma \
+\
+list as bullets\
+\
+paypal/gravity form response email, so paypal is having an issue with creating our posts before the payment is processed, bc it leaves the site after the gravity form hooks run. i am looking into a way to use some of the gform hooks that fire after a pyment is processed to see if that will help. I have also sent my question to the gform support team.\
+\
+But in the meantime\'85I got everything to work flawlessly with Stripe. All my redirects work and it actually eliminates alot of the issues I was having with paypal.\
+\
+i looked into stripe and for no extra fee with same % as paypal per transaction, i am able to run the payment directly on the site and it wont create the post unless the credit card is legit and processes plus its twice as fast as paypal. paypal redirects to their page, then you have to go through the process logging in etc. multiple confirm buttons to click, then an additional  click to return to our site.\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f4\fs26 \cf13 \cb3 \expnd0\expndtw0\kerning0
+If you enable the setting on the PayPal feed it will delay the processing of the APC feed until PayPal sends an IPN message indicating the transaction was successful, which is usually within a few minutes or hours (depending on how busy the PayPal IPN server is) of the user being redirected back to your site from PayPal.
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+tell mike to make a new user \
+4242424242424242\
+choose any future month and year\
+choose any \
+\
+\
+Post creation may take several seconds:\
+\
+Lots of data to be mapped, and it has to cross reference for duplicate post or term names before executing \
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://att-directory.com/wp-json/mapping/v1/location/los-angeles/business/1"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://att-directory.com/wp-json/mapping/v1/location/los-angeles/business/1}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+How to Edit:\
+\
+\
+\
+Ask about:\
+Pa checkmarks\
+\
+\
+\
+Premium no repeaters on gforms so some premium stuff might have to added in by the user after the profile is created.\
+\
+so we have a bunch of areas not listed on the premium form that are found in the template, and a bunch of areas listed on the premium form that arent found on the template. Faqs could be the questions but what would be the bio one and bio two? some areas where we are using repeaters for acfs\'85 i cant use them in the gravity form, I need to figure out a way to create repeater inputs fields for gravity forms, cant be acf form bc gform is what is creating the post, // premium auto populate, these areas cant have repeaters on the gravity forms i cant figure out how to get repeaters on gform. so the second best way is to auto populate and then they can go in and adjust after the post is created through the front facing acf form. there are two bios on premium too, how should we handle that?\
+\
+\
+Will work on:\
+\
+Problem with the aggressive siteground catch skipping over is_user_logged_in function. It will kick you out of logged in session unless you reload page\
+\
+I want to run a script with update_fields with posts arrays\
+\
+I want to add a map to the search results pages\
+\
+I want to filter results two additional ways by best reviews and by geolocation\
+\
+\
+\'97\'97\'97\
+\
+\
+\
+does stripe go through even payment fails?\
+\
+tut w table of contents etc maaybe just in site page somwhere\
+ask about the pa options again bc people might not see what they want on their\
+\
+\
+\
+\
+\
+later:\
+\
+upgrades will actually need to be upgrade in existing subscription\
+\
+search the whole theme for \'93Basic\'94 verbiage, both functions claim and create both have conditionals on 189 a year that needs to be updated smh\'85search the whole theme for \'93Basic\'94 verbiage\'85super annoying that coditional is based on labels not values so when i change the price the whole thing needs to be reconfigured, make sure to back up first bc it was breaking the multistep forms before\
+\
+the gform render still double ups forms.. cani add a class to hide one? select functions are nasty need a way to consolidate \
+\
+reword mapdata to just data in localized script\
+\
+only update rgar if the values are different, but that jquery to php which is ajax\
+\
+delelte duplicate single-standard, template-multisite, template-multisiteloggedin\
+\
+update os when done\
+\
+proper frmatting for php around html\
+\
+we need updrade options on the subscriptions on paypal\
+\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f5\fs35\fsmilli17600 \cf14 \expnd0\expndtw0\kerning0
+Object Oriented PHP\'a0 when combining functions, $post and $post_id might be different\
+\
+maaan just through and add if \{\} else\{\}
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+needs to add my new resize function to the menu\
+\
+script that runs and updates posts per page one time and inserts new lat long/ chron job or something to crawl the site at night and index these maps. maybe i scrape site with spider monkey get long ass list and have a chron job set up to run the site crawl the links and have my function grab and build long lat links. as its doing that it could also be caching each page view\
+\
+maybe style select on selling points update form later\
+\
+style cc  exp dates\
+\
+create a remove on the selling point custom image on the update sidebar form?\
+\
+need ithemes throw off ddos try to get kicked out of my custom login as a test\
+\
+<!-- https://support.advancedcustomfields.com/forums/topic/split-up-an-acf_form-into-a/ -->\
+\
+convert acf field names to keys in my functions?\
+\
+\
+acf price tiers overlay\
+\
+email confirmations for all scenarios, if contact info is different(email) have those be get sent to the person\'92s email as a confirmation, but for free claim it needs to be just the first email\
+\
+change yahoo email to 1p21\
+\
+did i not do years graduated on education?\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+tell mike we need a lot more pa options if we are gonna herd people to chose the ones we have preselected \
+\
+\
+forgot password forgot username stuff\
+\pard\pardeftab720\sl340\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 so we have a bunch of areas not listed on the premium form that are found in the template, and a bunch of areas listed on the premium form that arent found on the template. Faqs could be the questions but what would be the bio one and bio two? some areas where we are using repeaters for acfs\'85 i cant use them in the gravity form, I need to figure out a way to create repeater inputs fields for gravity forms, cant be acf form bc gform is what is creating the post, // premium auto populate, these areas cant have repeaters on the gravity forms i cant figure out how to get repeaters on gform. so the second best way is to auto populate and then they can go in and adjust after the post is created through the front facing acf form\
+\
+move overlays into one scss file (att bio multistep)\
+\
+keep cc mapped on render\
+\pard\pardeftab720\sl580\partightenfactor0
+\cf0 \
+gonna set up documentation so other devs can make sense of this after my time\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 undefined variables in my cdata\
+\
+\
+send back a stripe failed status so i can maybe turn post into a saved draft\
+\
+$99 and $199\
+\
+if($entry['42'] =="Premium Profile $189/Year") \{ // this value or featured lawyer wont work this can be tied to product input from stripe now\
+			\
+			wp_set_post_terms( $postid, 'Featured Lawyer', 'featured_lawyers' );\
+			\
+		\}\
+\
+\
+\
+\
+add maps to the search results damn not sure bc the value from the input field would need to know if its a city or state\'85 or somehow do the search and then have the zoom level be just whatever is contained\
+also make sure the search results show the featured at the top\
+\pard\pardeftab720\sl580\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\
+\
+\
+by selecting premium your setting up a featured post all across the directory and maps etc\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 whats the difference between free and basic? tell mike\
+bummer it has to loop a bunch of locations that makes slow, post creation get infinitely faster without having it search through terms during post creation, can I do that afterwards?\
+\
+\
+instead of redoing all of them i might be able to create a function that checks if my new lat long acfs are empty. if so run the lat long for the posts on the page and update one time only. thenover time the problem will correct itself. or run a chron job to do batch updates as well \
+\
+\
+\
+HIDE API KEYS IN FNCTIONS (TO GIT) AND IN JS FILE\
+\pard\pardeftab720\sl440\partightenfactor0
+
+\f6\fs40 \cf6 \cb3 \expnd0\expndtw0\kerning0
+serverside wrapper or proxy\'a0\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\f4\fs30 \cf15 create a PHP wrapper around the API calls that require keys, and then call that wrapper from Javascript\
+maybe try to use config file to ignore the api key in functions.php? or call the file into functions then ignore \
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/30464889/how-to-hide-api-key-using-php"}}{\fldrslt 
+\f1\fs24 \cf12 \cb1 \ul https://stackoverflow.com/questions/30464889/how-to-hide-api-key-using-php}}
+\f1\fs24 \cf12 \cb1 \ul \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\
+\
+\
+\'97\'97\'97\'97\
+\
+\
+\
+\
+\
+\
+\
+i wll have to switch the ipn back and forth\'85 as well as the confirmation url\
+ALSO TURN OFF REDIRECT PLUGIN ON LIVE SITE\
+\
+\'a0/?page=gf_paypal_ipn\
+ngrok http -host-header=rewrite att-directory.com:443\
+\
+merchant/business\
+sb-futo3289492@business.example.com\
+x)@sZ6;6\
+\
+buyer/personal\
+sb-j6d47s288650@personal.example.com\
+zzub8,D/\
+\
+https://att-directory.com/lawyer?p=\{post_id\}\
+\
+/Applications/MAMP/Library/bin/mysqldump -u root -p lawyersdbtwo > /Applications/MAMP/htdocs/lawyer-directory--just-lawyers/export_test.sql\
+\
+do posts still update or create even if paypal doesnt work or I click back before committing to paying? hahahahahah yes the update updates before successful paypal\'85.hahahha and create profile\
+\
+stripe might srill create post on a failed payment but at least that way i can manually check it out\
+\
+i could make the post a draft, have it create that\'85without cat creation or with\'85 then on success - publish the post\
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl390\sa120\partightenfactor0
+
+\f7\fs26 \cf6 \cb3 \expnd0\expndtw0\kerning0
+\'a0{\field{\*\fldinst{HYPERLINK "https://docs.gravityforms.com/gform_trigger_payment_delayed_feeds/"}}{\fldrslt \cf12 \ul gform_trigger_payment_delayed_feeds}}\cf12 \ul \
+\
+\pard\pardeftab720\li1520\sl640\sa648\partightenfactor0
+
+\f0\fs54 \cf16 \cb17 \ulnone gform_post_payment_action\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f8\b\fs32 \cf16 Payment Completed
+\f0\b0 \'a0hook
+\fs54 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl390\sa120\partightenfactor0
+
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+stripe might still be easier\'85.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.sandbox.paypal.com/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://www.sandbox.paypal.co}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://zeropointdevelopment.com/how-to-scroll-to-the-first-error-on-a-gravity-form/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://zeropointdevelopment.com/how-to-scroll-to-the-first-error-on-a-gravity-form/}}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 pagination is broken agaaaain \
+\
+on update claim local ngork the profile= success overlay isnt showing up is that anissue \{embed_url\} or ngork/ipn redirect?\
+\
+Why arent first name and last name mapping to the subscribe on paypal?\
+\
+why is posts showing up in my lawyer feed\
+\
+https://hooks.zapier.com/hooks/paypal/?cid=741289\
+\
+locations set_terms is very redundant in both functions\
+\
+map states to abbr for the addresss\
+\
+bummer it has to loop a bunch of locations that makes slow, post creation get infinitely faster without having it search through terms during post creation, can I do that afterwards?\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2019-09-10 at 11.10.50 PM.png \width18600 \height6240 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+need charcter count to lessen as you type\
+\
+split up js into better organized files when making documentation\
+\
+\
+\
+i want to acf form but its breaking a ton of shit bc of my defer stuff, i might need to put all files back in the header and then hope siteground cache can defer all files\'85 or keep trying to have a conditional for just the single page\
+\
+what am i doing with all of the questions that arent mapped and on mock up? ask mike\
+\
+\
+turn basic 250 basic back on\
+\
+\
+\'97\'97\'97\
+\
+\
+\
+The practice area title in the banner on the bio page is grabbing the first PA from that attorney\'92s list as a default. This is because each lawyer has so many PA\'92s. That practice area term is now being filtered into the related attorneys below based on that PA within that city. \
+\'97\'97\'97\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://att-directory.com/lawyer/bobby-dale-peterson-2/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://att-directory.com/lawyer/bobby-dale-peterson-2/}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+hide bottom related loop if no results\
+\
+But I was thinking\'85 what if we had the pa title banner and the related attorneys below change dynamically based on the specific pa term the user is intending to see? For example: \
+\
+take /lawyer/a-william-urquhart for example, he has these pa\'92s:\
+\
+banking\
+bankruptcy and debt\
+business\
+class action\
+intellectual property\
+\
+let\'92s say as a user, you have narrowed down your pa (aviation) and city (atlanta) and are coming from this page: /lawyers-practice/california/los-angeles/business-lawyers/\
+\
+The user has the term \'93business\'94 in mind. So wouldn\'92t it make sense to have \'93business\'94 dynamically be the pa title banner as well as the related attorneys below? This would happen only when coming from that /lawyers-practice/california/los-angeles/business-lawyers page. To make that happen we could have the bio link on this page have a query string  /lawyer/a-william-urquhart?business. \
+\
+Then for seo purposes it would just default to the first pa if there isn\'92t a query string tied to the bio url.\
+\
+\
+(if we do this will need to have query string setup on certain pages and also in the related attorneys posts)\
+\
+\
+\'97\'97\'97\'97\
+\
+hide related attorneys if empty if I ever find an example\
+\
+search results needs to show featured attorneys first\
+\
+show him all important links\
+\
+like /lawyer/garrett-cullen/\
+\
+featured pa on all pas page\
+we should do a featured pa list on lawyers-location/state/california/san-diego-lawyers\
+\
+on wishlist: \
+\
+so right now, will they just submit form and we recive entry and manually create or update profile based on entry? \
+ in the future, we should\
+start setting up payment gateway and also account creation. we should also make a front facing profile account page. automate the process \
+\
+\
+\
+claim profile form, i could map this in the options page instead\
+\
+\
+\
+\
+\
+\
+to do\
+\'97\'97\'97\'97\'97\'97\'97\
+\
+\
+\
+get git set up to push to siteground\
+\
+search all types is timing out its too many what if i have it go to here {\field{\*\fldinst{HYPERLINK "https://lawyersnearme.io/lawyers-location/state/california-lawyers/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://lawyersnearme.io/lawyers-location/state/california-lawyers/}}\
+\
+featured city is hitting the filter when it shouldnt be \
+\
+rewrite lawyer bios and make sure the search results reflect the new urls as well, also practice area lists on the bio pages, also related layers need the urls, check featured cities loop too, map view profile link - {\field{\*\fldinst{HYPERLINK "https://wordpress.stackexchange.com/questions/39500/how-to-create-a-permalink-structure-with-custom-taxonomies-and-custom-post-types/39862#39862"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://wordpress.stackexchange.com/questions/39500/how-to-create-a-permalink-structure-with-custom-taxonomies-and-custom-post-types/39862#39862}}\
+\
+redirect broken rewrite rules if they dont match \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 pagination prev is not working look into or at least do a hacky onclick back\
+\
+\'97\'97\'97\
+\
+no follow the pa and location archives now that im not using them \
+\
+tell him california los angeles business is the pathway to see all the examples\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+add city and state to bio\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 does search need a sub filter of some sort? and map? def needs a featured feed first\
+\
+sort by years of experience\
+\
+add new profiles\
+\
+add reviews\
+\
+filer by location, title, featured, and ratings, (alphabetical by default)\
+get geocode compare to lat acfs and list from closest to furthest,  there needs to be some relevance on this page. how slow is meta query to order by number with pagination. I could at least do a featured option for meta, will that be slow? featured could be mapped to map as well with a different featured pin (featured will need to show first for all instances) featured should be an added term not an acf\
+\
+\
+\
+Refine search on mobile but also an easy way to filter better on the page that you are on\
+\
+Featured images and website favicon on map results\
+\
+\
+related should become premium\
+\
+\
+subfilter on search results: Somehow store all post ids when the default alphbetical results come back, then do the meta query shit through just those\
+\
+\
+longitude and latitudes \'85 fuck this, lets just do it from the spreadsheet and redo, not sure about google map api quota\
+\
+\
+rebuild seo - also get someone to crawl site with that spider seo - this part will take some trial and error - make acfs? will have to be acfs\'85. but build most by hand if I can\'85.. im losing page hooks with rewrite rules and template_include might be a big problem - how could I live edit stuff? setup a live edit that links to an acf option box somehow for seo and content blocks\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://teslathemes.com/blog/how-to-optimize-your-wordpress-site-without-any-seo-plugins/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://teslathemes.com/blog/how-to-optimize-your-wordpress-site-without-any-seo-plugins/}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.google.com/search?q=rewrite+api+and+custom+fields&rlz=1C5CHFA_enUS779US779&oq=rewrite+api+and+custom+fields&aqs=chrome..69i57.4332j0j1&sourceid=chrome&ie=UTF-8"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://www.google.com/search?q=rewrite+api+and+custom+fields&rlz=1C5CHFA_enUS779US779&oq=rewrite+api+and+custom+fields&aqs=chrome..69i57.4332j0j1&sourceid=chrome&ie=UTF-8}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://teslathemes.com/blog/how-to-optimize-your-wordpress-site-without-any-seo-plugins/"}}{\fldrslt \cf12 https://teslathemes.com/blog/how-to-optimize-your-wordpress-site-without-any-seo-plugins/}}
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 to-do-eventually\
+\'97\'97\'97\'97\'97\'97\'97\
+\
+whats cool too is we can purge cache on just urls we update, so as the site builds and cahces, we can leave long-time cached urls alone\
+\
+set up git terminal into siteground\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul for titles and even those search conditionals in the h1s, write a function then echo function to keep templates clean
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+figure out how to defer query monitor so it still works\
+\
+finish organizing function incs\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul look into our google limits
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+fuck i gotta add all the nulls to everything in the map (phone\
+\
+$mypaged should just be listed once\
+\
+clean up messy code:\
+\
+i have a lot of redundant code in my custom search query. I also need to find a way to not have to reassign the same variables to each of the get_query_vars in functions and all over my templates\
+\
+clean up search query strings?\
+\
+make lots of comments for future devs\
+\
+\
+\
+\
+go through all desscriotion blocks and fix edit buttons also check edits for all the lists\
+\
+if(is_user_logged_in()) \{\
+	\
+		 			echo '<a href="' . get_bloginfo('url') .  '/wp-admin/admin.php?page=pa-locations-content-blocks-settings">Edit</a><br/><br/><br/>';\
+			 	\}\
+\
+\
+delete: functions_searchsnippets.php.og, functions copy.php.before_pre_get_posts_wp_query, taxonomy-practice_area-newtwo.php, taxonomy-practice_area.php.new, template-locations_city_pa-old.php\
+\
+comment on shortcomings in functions.php and how this can be imroved\
+\
+\
+\
+if i ever rescrap get the street as a separate on if possible\
+\
+\
+\
+templates\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf18 1. pre_get_post\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f8\b \cf0 \'93archive-lawyer\'94  three part search
+\f0\b0 \
+\
+	- runs a pre_get_post with all conditionals\
+\
+
+\f8\b  "template-locations_city_pa.php" /lawyers-practice/california/anaheim-hills/business-lawyers/
+\f0\b0 \
+\
+	- runs a pre_get_post - needs a rewrite rule setup to handle pagination\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf18 2. Unable to run pre_get_post at this time, each of these loops are similar with multiple wp_query calls, these also seem like I\'92m running a few things too many times\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f8\b \cf0 \'93taxonomy-practice_area.php\'94  /lawyers-practice/criminal-defense-lawyers
+\f0\b0 \
+\
+	- im unable to use pre_get_posts and there are a couple wp_query calls\'85\
+	- timeout on large ones\
+	- I get the first 2000 post ids that are in both the locations and current pa - \cf19 this needs to be improved upon\cf0 \
+	- then I return all terms found in locations that have those object_ids (post ids)\
+\
+
+\f8\b \'93template-locations_state_pa.php\'94 /lawyers-practice/colorado/criminal-defense-lawyers/\
+\
+	
+\f0\b0 \cf19 - look at this closer what is get_term_by I think this is here to show just cities tied to a current state id\cf0 \
+	- most likely won\'92t be using pre_get_post because I need to run mutiple wp_queries\
+	- I get all post ids in the current state and the current pa\
+	- then I return all terms of locations (cities) that have those object ids (post ids)\
+\
+
+\f8\b \'93template-practicearea_city.php\'94 /lawyers-location/state/alaska/barrington-alaska-lawyers/\
+\
+	
+\f0\b0 - does this timeout on large ones?
+\f8\b \
+	
+\f0\b0 - get all post ids in the current location (city) with all the pas\
+	- then I return all terms found in pas with those object ids (post ids)\
+\
+\
+\
+\
+\
+search\
+\
+\'97\'97\'97\'97\
+\
+think about index the really slow ones:\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://deliciousbrains.com/sql-query-optimization/"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://deliciousbrains.com/sql-query-optimization/}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://thomasgriffin.io/optimize-wordpress-queries/"}}{\fldrslt \cf12 https://thomasgriffin.io/optimize-wordpress-queries/}}
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+googling wordpress query optimizations will help out alot\
+\
+\
+https://stevepolito.design/blog/create-a-custom-search-form-in-wordpress/\
+\
+what is this? https://devblog.kommigraphics.com/wordpress/wp_query-get-count-results-instead-returning-fields/\
+\
+look at transients again\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f9\fs26 \cf20 \cb21 \expnd0\expndtw0\kerning0
+\'a0
+\f10\b \cb1 'cache_results'\'a0 => false,
+\f9\b0 \
+
+\f10\b \'a0\'a0\'a0 'update_post_meta_cache' => false,
+\f9\b0 \
+
+\f10\b \'a0\'a0\'a0 'update_post_term_cache' => false,\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\
+\
+mysql\
+\
+\'97\'97\'97\'97\
+\
+this worked to import\
+/Applications/MAMP/Library/bin/mysql -u root -p import_test < /Applications/MAMP/htdocs/koonz/import_test.sql\
+\
+this worked to export db\
+\
+/Applications/MAMP/Library/bin/mysqldump -u root -p import_test > /Applications/MAMP/htdocs/koonz/export_test.sql\
+\
+/Applications/MAMP/Library/bin/mysqldump -u root -p lawyersdbsearchreplace > /Applications/MAMP/htdocs/lawyer-directory--just-lawyers/export_db.sql\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\sl300\sa440\partightenfactor0
+
+\f8\b\fs26 \cf6 \cb3 \expnd0\expndtw0\kerning0
+Nested Taxonomy Handling:
+\f0\b0 \
+The\'a0
+\f11 'tax_query'
+\f0 \'a0clauses can be nested, to create more complex queries. Example: Display\'a0
+\f8\b posts
+\f0\b0 \'a0that are in the\'a0
+\f8\b quotes
+\f0\b0 \'a0category OR both have the\'a0
+\f8\b quote
+\f0\b0 \'a0post format AND are in the\'a0
+\f8\b wisdom
+\f0\b0 \'a0category:\
+\pard\pardeftab720\sl312\partightenfactor0
+
+\f12\fs24 \cf6 \cb22 $args = array(\
+	'post_type' => 'post',\
+	'tax_query' => array(\
+		'relation' => 'OR',\
+		array(\
+			'taxonomy' => 'category',\
+			'field'    => 'slug',\
+			'terms'    => array( 'quotes' ),\
+		),\
+		array(\
+                        'relation' => 'AND',\
+                        array(\
+			        'taxonomy' => 'post_format',\
+			        'field'    => 'slug',\
+			        'terms'    => array( 'post-format-quote' ),\
+                        ),\
+                        array(\
+                                'taxonomy' => 'category',\
+                                'field'    => 'slug',\
+                                'terms'    => array( 'wisdom' ),\
+                        ),\
+		),\
+	),\
+);\
+$query = new WP_Query( $args );\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+// practice areas\
+		\
+		// find a way to loop through these instead of hardcoding, and try to consolodate, if they dont exist then add insert terms function later\
+		\
+		// pa choice one\
+		\
+		\
+		// https://docs.gravityforms.com/entry-object/#checkboxes-field\
+		\
+\
+/*\
+		$pachoiceone = $entry['28.1'];\
+		\
+		$pachoiceone_term = term_exists( $pachoiceone, 'practice_area' );\
+		\
+		$pachoiceone_termid = $pachoiceone_term['term_id'];\
+		\
+		// pa choice two\
+		\
+		$pachoicetwo = $entry['28.2'];\
+		\
+		$pachoicetwo_term = term_exists( $pachoicetwo, 'practice_area' );\
+		\
+		$pachoicetwo_termid = $pachoicetwo_term['term_id'];\
+		\
+		// pa choice three\
+		\
+		$pachoicethree = $entry['28.3'];\
+		\
+		$pachoicethree_term = term_exists( $pachoicethree, 'practice_area' );\
+		\
+		$pachoicethree_termid = $pachoicethree_term['term_id'];\
+\
+		\
+		// pa choice four\
+		\
+		$pachoicefour = $entry['28.4'];\
+		\
+		$pachoicefour_term = term_exists( $pachoicefour, 'practice_area' );\
+		\
+		$pachoicefour_termid = $pachoicefour_term['term_id'];\
+		\
+		// pa choice five\
+		\
+		$pachoicefive = $entry['28.5'];\
+		\
+		$pachoicefive_term = term_exists( $pachoicefive, 'practice_area' );\
+		\
+		$pachoicefive_termid = $pachoicefive_term['term_id'];\
+		\
+		// pa choice six\
+		\
+		$pachoicesix = $entry['28.6'];\
+		\
+		$pachoicesix_term = term_exists( $pachoicesix, 'practice_area' );\
+		\
+		$pachoicesix_termid = $pachoicesix_term['term_id'];\
+		\
+		// pa array\
+			\
+		$pa_string = $pachoiceone_termid . ' ' . $pachoicetwo_termid . ' ' . $pachoicethree_termid . ' ' . $pachoicefour_termid . ' ' . $pachoicefive_termid . ' ' . $pachoicesix_termid;\
+\
+		$pa_array = explode(" ", $pa_string);\
+	\
+		$pa_intarray = array_map('intval', array_filter($pa_array, 'is_numeric'));\
+\
+		\
+		// pa string\
+		\
+// 		$pa_string = $pachoiceone_termid . ', ' . $pachoicetwo_termid . ', ' . $pachoicethree_termid . ', ' . $pachoicefour_termid . ', ' . $pachoicefive_termid . ', ' . $pachoicesix_termid;\
+		\
+		//$pa_string_ids = explode(" ",$pa_string_ids);\
+		\
+		wp_set_post_terms( $postid, $pa_intarray, 'practice_area' );\
+*/\
+		\
+		\
+		\
+		// checked checkmarks test\
+		\
+		// do an inout field and see what the hell this returns inside hook\
+\
+\
+\
+\
+https://att-directory.com/lawyer?p=\{post_id\}\
+\
+https://att-directory.com/lawyer/\{Post ID Merge Tag:94\}\
+\
+\
+validatoin errorss arent snapping \
+	\
+	// this works\
+	\
+	add_action( 'gform_pre_submission_4', 'pre_submission_handler' );\
+	\
+	function pre_submission_handler( $form ) \{\
+    \
+    $_POST['input_94'] = rgpost( 'input_1' );\
+	\
+	\}\
+\
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://legacy.forums.gravityhelp.com/topic/using-forms-to-update-a-post"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://legacy.forums.gravityhelp.com/topic/using-forms-to-update-a-post}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://legacy.forums.gravityhelp.com/topic/how-to-update-a-post"}}{\fldrslt \cf12 https://legacy.forums.gravityhelp.com/topic/how-to-update-a-post}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.gravityforms.com/gform_after_submission/"}}{\fldrslt \cf12 https://docs.gravityforms.com/gform_after_submission/}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.gravityforms.com/entry-object/"}}{\fldrslt \cf12 https://docs.gravityforms.com/entry-object/}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://codex.wordpress.org/Function_Reference/wp_update_post"}}{\fldrslt \cf12 https://codex.wordpress.org/Function_Reference/wp_update_post}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.advancedcustomfields.com/resources/update_field/"}}{\fldrslt \cf12 https://www.advancedcustomfields.com/resources/update_field/}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://bionicteaching.com/gravity-forms-to-acf-pattern/"}}{\fldrslt \cf12 http://bionicteaching.com/gravity-forms-to-acf-pattern/}}
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://att-directory.com/wp-json/mapping/v1/location/san-diego/business/1?_jsonp=eqfeed_callback#"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://att-directory.com/wp-json/mapping/v1/location/san-diego/business/1?_jsonp=eqfeed_callback#}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/30464889/how-to-hide-api-key-using-php"}}{\fldrslt \cf12 https://stackoverflow.com/questions/30464889/how-to-hide-api-key-using-php}}\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://bionicteaching.com/gravity-forms-to-acf-pattern/"}}{\fldrslt \cf12 http://bionicteaching.com/gravity-forms-to-acf-pattern/}}
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+/*\
+add_action( 'gform_after_submission_2', 'set_post_content', 10, 2 );\
+function set_post_content( $entry, $form ) \{\
+ \
+    //getting post\
+    $post = get_post( $entry['post_id'] );\
+ \
+    //changing post content\
+    $post->post_content = 'Blender Version:' . rgar( $entry, '7' ) . "<br/> <img src='" . rgar( $entry, '8' ) . "'> <br/> <br/> " . rgar( $entry, '13' ) . " <br/> <img src='" . rgar( $entry, '5' ) . "'>";\
+ \
+    //updating post\
+    wp_update_post( $post );\
+\}\
+*/\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+	\
+// https://wordpress.stackexchange.com/questions/125290/change-gravity-forms-confirmation-redirect-query-string-to-include-entry-id\
+\
+\
+/*\
+add_filter("gform_confirmation", "confirm_change", 10, 4);\
+function confirm_change($confirmation, $form, $lead, $ajax)\{\
+\
+    $url = get_bloginfo('url') ."/thank-you/?page=". $lead['1']. "&rma=" . ($lead['id']);\
+\
+    $confirmation = array('redirect' => $url);\
+    return $confirmation;\
+\}\
+*/\
+\
+// https://stackoverflow.com/questions/18938128/redirect-gravity-form-on-submission-to-post-just-created\
+\
+/*\
+add_action('gform_after_submission', 'redirect_on_post', 10, 2);\
+\
+function redirect_on_post($confirmation, $form, $lead, $ajax)\{\
+	$pid = $lead['post_id'];\
+	$confirmation = array("redirect" => get_site_url() . "/?p=$pid");\
+	return $confirmation;\
+\}\
+*/\
+\
+//gform_advancedpostcreation_post_2\
+	\
+\
+/*\
+add_filter( 'gform_advancedpostcreation_post_2', 'change_post', 10, 4 );\
+\
+function change_post( $post, $feed, $entry, $form)\{\
+    $post['post_title'] = 'This is a g test';\
+    return $post;\
+\}\
+*/\
+\
+\
+\
+/*\
+add_action( 'gform_after_submission', 'set_post_content', 10, 2 );\
+function set_post_content( $entry, $form ) \{\
+ \
+    //if the Advanced Post Creation add-on is used, more than one post may be created for a form submission\
+    //the post ids are stored as an array in the entry meta\
+    $created_posts = gform_get_meta( $entry['id'], 'gravityformsadvancedpostcreation_post_id' );\
+    foreach ( $created_posts as $post )\
+    \{\
+        $post_id = $post['post_id'];\
+        $post = get_post( $post_id );\
+ \
+        $post->post_content = 'This is a test for post id ' . $post_id . '.';\
+ \
+        wp_update_post( $post );\
+    \}\
+\}\
+*/\
+\
+// look into this more\
+\
+/*\
+add_action( 'gform_advancedpostcreation_post_after_creation', 'update_product_information', 10, 4 );\
+function update_product_information( $post_id, $feed, $entry, $form )\{\
+\'a0\
+\'a0\'a0\'a0\'a0//update the prices set for the product\
+\'a0\'a0\'a0\'a0update_post_meta( $post_id, '_regular_price', $entry['7'] );\
+\'a0\'a0\'a0\'a0update_post_meta( $post_id, '_price', $entry['7'] );\
+\'a0\
+\'a0\'a0\'a0\'a0//update the category\
+\'a0\'a0\'a0\'a0wp_set_object_terms( $post_id, $entry['6'], 'product_cat' );\
+\'a0\
+\}\
+*/\
+\
+\
+\
+\
+\
+//https://legacy.forums.gravityhelp.com/topic/how-to-update-a-post\
+\
+// Update post 37\
+/*\
+  $my_post = array(\
+      'ID'           => 598188,\
+      'post_title'   => 'garrett was here',\
+  );\
+*/\
+\
+// Update the post into the database\
+  // wp_update_post( $my_post );\
+  \
+  // Of course, this should be done in an development environment only and commented out or removed after deploying to your production site.\
+\
+/*\
+$post_id = wp_update_post( $current_item, true );						  \
+if (is_wp_error($post_id)) \{\
+	$errors = $post_id->get_error_messages();\
+	foreach ($errors as $error) \{\
+		echo $error;\
+	\}\
+\}\
+*/\
+\
+\
+\
+//wp_set_post_terms( $post_id, '139,2689', 'location' );\
+	\
+		// will need an array for pa's\
+ \
+   //update the category\
+    //wp_set_object_terms( $post_id, 'A New Test', 'practice_area' );\
+    \
+   //wp_insert_term\
+   \
+   //https://wordpress.stackexchange.com/questions/99681/how-to-set-hierarchical-terms-to-a-post-using-wp-set-object-terms\
+   \
+\
+/*\
+// set terms\
+wp_set_object_terms( $post_id, $object_types, 'immomakler_object_type', true );\
+// make terms hierarchial by objektart\
+$term_parent = get_term_by( 'slug', $openimmo_data['objektart'], 'immomakler_object_type' );\
+$term_child  = get_term_by( 'slug', $openimmo_data['objektart_detail'], 'immomakler_object_type' );\
+delete_option( 'immomakler_object_type_children' ); // workaround for WordPress not updating this option properly\
+wp_update_term( $term_child->term_id, 'immomakler_object_type', array( 'parent' => $term_parent->term_id ) );\
+*/\
+\
+\
+// wp_set_post_terms might be it https://codex.wordpress.org/Function_Reference/wp_set_post_terms\
+\
+ $mycity_term = term_exists( 'San Diego', 'location' );\
+ \
+ if($mycity_term) \{\
+	 \
+	 echo "yes" . var_dump($mycity_term['term_id']);\
+	 \
+ \}\
+ \
+\
+$entry_id = '63';\
+$entry = GFAPI::get_entry( $entry_id );\
+\
+var_dump( $entry['56'] );\
+\
+	// if city term exists then get id and set terms list array of state/state/city\
+			 \
+			 // wp_set_post_terms()\
+		\
+   // if city term does not exist, wp_insert_term to create term object, get that id, then \
+   \
+   		// wp_set_post_terms()\
+\
+   //$parent_term = term_exists( 'california', 'location' ); // array is returned if taxonomy is given\
+\
+/*\
+	 wp_insert_term(\
+	 'San Diego', // the term \
+	 'location', // the taxonomy\
+	  array(\
+    	'description'=> 'a term update test of san diego',\
+			'slug' => 'san-diego333',\
+			'parent'=> $parent_term['term_id']  // get numeric term id\
+		)\
+	);\
+*/\
+\
+//if it seems cached on the fly i might have to delete the child term first https://gist.github.com/hinnerk-a/3835366\
+\
+// https://wordpress.stackexchange.com/questions/8357/inserting-terms-in-an-hierarchical-taxonomy\
+\
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.google.com/search?q=ph+variables+101&rlz=1C5CHFA_enUS724US726&oq=ph+variables+101&aqs=chrome..69i57.3894j0j1&sourceid=chrome&ie=UTF-8"}}{\fldrslt 
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul https://www.google.com/search?q=ph+variables+101&rlz=1C5CHFA_enUS724US726&oq=ph+variables+101&aqs=chrome..69i57.3894j0j1&sourceid=chrome&ie=UTF-8}}
+\f1 \cf12 \expnd0\expndtw0\kerning0
+\ul \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \ulnone \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+	$entry_id = '206';\
+	$entry = GFAPI::get_entry( $entry_id );\
+\
+	var_dump( $entry['42'] );\
+\
+}

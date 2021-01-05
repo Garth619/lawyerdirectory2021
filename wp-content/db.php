@@ -1,0 +1,1 @@
+/Applications/MAMP/htdocs/lawyer-directory--just-lawyers/wp-content/plugins/query-monitor/wp-content/db.php

@@ -1,0 +1,11 @@
+<svg id="star_icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15.25mm" height="21.79mm" viewBox="0 0 43.24 61.76">
+  <defs>
+    <style>
+      .star_icon-cls-1 {
+        fill: #2117dc;
+      }
+    </style>
+  </defs>
+  <title>star_icon</title>
+  <path class="star_icon-cls-1" d="M0,0V61.76L21.62,47.67,43.24,61.76V0ZM28.75,36.57l-7.13-3.75-7.13,3.75,1.36-7.94L10.08,23l8-1.16,3.57-7.23,3.57,7.23,8,1.16-5.77,5.62Z"/>
+</svg>

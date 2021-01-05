@@ -1,0 +1,19 @@
+<svg id="success" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 484.46 484.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8ec640;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>success</title>
+  <circle class="cls-1" cx="242.23" cy="242.23" r="242.23"/>
+  <g>
+    <rect class="cls-2" x="130.59" y="267.54" width="127.26" height="34.6" transform="translate(244.53 -67.67) rotate(45)"/>
+    <rect class="cls-2" x="191.38" y="235.86" width="200.8" height="34.6" transform="translate(663.34 212.09) rotate(135)"/>
+  </g>
+</svg>

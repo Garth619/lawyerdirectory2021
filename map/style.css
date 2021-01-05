@@ -1,0 +1,74 @@
+/* =Reset default browser CSS. Based on work by Eric Meyer:
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, section, main {background: transparent;border: 0;margin: 0;padding: 0;vertical-align: baseline;}body {line-height: 1;}h1, h2, h3, h4, h5, h6 {clear: both;font-weight: normal;}ol, ul {list-style: none;}blockquote {quotes: none;}blockquote:before, blockquote:after {content: '';content: none;}del {text-decoration: line-through;}table {border-collapse: collapse;border-spacing: 0;}a img {border: none;}
+
+/* Box-sizing: Border-box
+-------------------------------------------------------------- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Main Styles
+-------------------------------------------------------------- */
+
+body {
+  height: 100vh;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.gm-style div {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+
+.gm-style .gm-style-iw {
+	background-color: #363f44 !important;
+	border-radius: 5px !important;
+	top: 18px !important;
+	-webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.25) !important;
+	-moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.25) !important;
+	box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.25) !important;
+}
+
+.gm-style .gm-style-iw + div {
+	right: 30px !important;
+  top: 30px !important;
+}
+
+#map .inner-content {
+  margin: 30px;
+  color: #8a8383;
+}
+
+#map h3 {
+  font-family: 'Work Sans';
+  font-size: 17px;
+  letter-spacing: .025em;
+  margin-bottom: 5px;
+  color: #c8bebe;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+#map p {
+  font-family: 'Work Sans';
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: capitalize;
+  letter-spacing: .05em;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+#map p:last-child {
+  margin-bottom: 0px;
+}
+

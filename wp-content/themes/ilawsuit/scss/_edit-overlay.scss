@@ -1,0 +1,1007 @@
+.myedit {
+	transition: all 200ms ease-in-out;
+	position: relative;
+	> span.edit_icon {
+		width:20px;
+		height:20px;
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		z-index:1;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+		background: url(#{$themePath}images/edit.svg) no-repeat;
+		background-size:20px;
+	}
+	&:hover {
+		> span.edit_icon {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+.myedit.edit_sidebar {
+	> span.edit_icon {
+		top:-3px;
+		right:0;
+	}
+}
+
+.myedit.edit_content {
+	padding-bottom: 10px;
+	> span.edit_icon {
+		bottom:0px;
+		left:0;
+	}
+}
+
+
+.myedit.edit_content_top {
+	padding-top:45px;
+	margin-top:-35px;
+	> span.edit_icon {
+			top:0px;
+			left:0;
+	}
+}
+
+
+
+.internal_banner_content {
+	.myedit.edit_content.edit_banner_meta {
+		padding-bottom:40px;
+		> span.edit_icon {
+			bottom:6px;
+			left:0;
+		}
+	}
+}
+
+.myedit.edit_inline {
+	padding-bottom: 10px;
+	> span.edit_icon {
+		position: relative;
+		display: inline-block;
+		margin-left:30px;
+		top:2px;
+	}
+}
+
+
+.att_bio_selling_point_inner.myedit {
+	> span.edit_icon {
+			background: url(#{$themePath}images/edit-white.svg);
+			//position: relative;
+	}
+}
+
+
+
+.visit_website_button_wrapper.myedit {
+	width:100%;
+	padding-bottom:50px;
+	span.edit_icon {
+		top:auto;
+		right:auto;
+		left:0;
+		bottom:10px;
+		margin-right:-35px;
+	}
+}
+
+
+
+.update_custom_form {
+	position: fixed;
+	top:120px;
+	right:0;
+	width:100%;
+	height:100%;
+	z-index:20;
+	display: flex;
+	overflow-y: scroll;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 300ms ease-in-out;
+	.update_custom_form_left {
+		flex-grow: 1;
+		//height:100%;
+		background: rgba(255,255,255,0.7);
+	}
+	.update_custom_form_right {
+		padding:45px 45px 100px;
+		width:650px;
+		position: relative;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		background: #fff;
+		box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.49);
+		input[type="submit"] {
+			margin-bottom: 100px;
+		}
+		textarea {
+			height:52px;
+			transition: all 300ms ease-in-out;
+			&:focus {
+				height:300px;
+			}
+		}
+	}
+}
+
+
+.update_custom_form.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+
+html.fixed, body.fixed {
+	overflow: hidden;
+}
+
+html, body {
+	overflow: visible;
+}
+
+
+body.single-lawyer {
+	#internal_main {
+		filter: blur(0px);
+		-webkit-filter: blur(0px);
+		transition: filter 300ms ease-in-out;
+	}
+	#internal_main.blur {
+		filter: blur(2px);
+		-webkit-filter: blur(2px);
+	}
+}
+
+.acf_close_wrapper {
+	width:100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.acf_close {
+	width:50px;
+	height:50px;
+	margin-bottom: 25px;
+	cursor: pointer;
+	position: relative;
+	&:before, &:after {
+		content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #04289f;
+    position: absolute;
+    top: 23px;
+    right: 0;
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+
+
+.update_custom_form {
+
+}
+
+.acf-tab-wrap, .acf-field, .acf-form-submit {
+	display: none;
+}
+
+.content {
+	.acf-field {
+		margin-bottom: 25px;
+		p {
+			font-size: 19px;
+			line-height: 24px;
+		}
+		iframe {
+			min-height:300px !important;
+		}
+	}
+}
+
+.acf-hidden {
+	display: none !important;
+}
+
+
+#message.updated {
+	display: none;
+/*
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:5;
+	height:100%;
+	background: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+*/
+}
+
+
+#acf-form {
+	label {
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: 0.15em;
+		display: block;
+		margin-bottom:10px;
+		@include montserrat_extrabold;
+	}
+	input[type="text"],input[type="password"], textarea {
+		border: 2px solid #d8d8d8;
+		font-size: 20px;
+		line-height: 38px;
+		border-radius: 10px;
+		font-family: $worksans;
+		padding: 5px 20px;
+		width:100%;
+		transition: all 200ms ease-in-out;
+		&:focus {
+			border: 2px solid $blue;
+			}
+		}
+	input[type="submit"] {
+		background: $bluetwo;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding: 15px 30px;
+    display: block;
+    cursor: pointer;
+    margin:20px auto 100px;
+    //width:156px;
+    transition: all 200ms ease-in-out;
+    @include montserrat_extrabold;
+    &:hover {
+	    background: $blue;
+    }
+	}
+	ul.acf-checkbox-list {
+		li {
+			label {
+				font-size: 20px;
+				line-height: 26px;
+				font-family: $worksans;
+				font-weight: 600;
+				text-transform: none;
+				letter-spacing: 0;
+				font-weight: 400;
+				margin-left:5px;
+				input {
+					position: relative;
+					top:4px;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+.update_custom_form {
+	.validation_error {
+		display: none;
+	}
+	ul {
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		margin-bottom:0;
+		list-style: none;
+		li.gsection {
+			//flex-basis: 100%;
+			margin-top:0px;
+			margin-bottom:35px;
+		}
+		// post id redirect
+		li.mypost_id, li.myhomeurl {
+			display: none;
+		}
+		//education
+		li.myeducation_section {
+			margin-top:10px;
+		}
+		// profile choice
+		li.myprofile_choice {
+			margin-bottom:0;
+			//flex-basis: 100%;
+			ul {
+				display: block;
+				margin-bottom:0;
+				li {
+					display: flex;
+					//flex-basis: 100%;
+					&:last-of-type {
+						margin-bottom:0;
+					}
+					label {
+						font-size: 20px;
+						line-height: 26px;
+						font-family: "Work Sans",sans-serif;
+						font-weight: 600;
+						text-transform: none;
+						letter-spacing: 0;
+						font-weight: 400;
+						margin-left: 15px;
+					}
+				}
+			}
+		}
+		// product
+		li.mypaypal_product {
+			display: none;
+		}
+		li {
+			flex-basis: 100%;
+			padding:0;
+			margin-bottom:25px;
+			&:before {
+				display: none;
+			}
+			label {
+				text-transform: uppercase;
+				font-size: 15px;
+				line-height: 20px;
+				letter-spacing: 0.15em;
+				display: block;
+				margin-bottom:10px;
+				@include montserrat_extrabold;
+			}
+			input[type="text"],input[type="password"], textarea {
+				border: 2px solid #d8d8d8;
+				font-size: 20px;
+				line-height: 38px;
+				border-radius: 10px;
+				font-family: $worksans;
+				padding: 5px 20px;
+				width:100%;
+				transition: all 200ms ease-in-out;
+				&:focus {
+					border: 2px solid $blue;
+				}
+			}
+			input[type="checkbox"], input[type="radio"] {
+				width:25px;
+				height:25px;
+				border: 2px solid #d8d8d8;
+				position: relative;
+				&:checked {
+					//background: $offwhite;
+					&:after {
+						display: block;
+					}
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					left: 8px;
+					top: 3px;
+					width: 7px;
+					height: 11px;
+					border: solid $bluetwo;
+					border-width: 0 3px 3px 0;
+					transform: rotate(45deg);
+					display: none;
+				}
+			}
+			textarea {
+				height:52px;
+				transition: all 300ms ease-in-out;
+				&:focus {
+					height:500px;
+				}
+			}
+		}
+		li.flex_width {
+			flex-basis:100%;
+		}
+		li.mycontact_checkmark {
+			> label {
+				display: none;
+			}
+			ul {
+				li {
+					display: flex;
+					align-items: center;
+					flex-basis:100%;
+					margin-bottom: 0;
+					label {
+						font-family: $worksans;
+						text-transform: none;
+						letter-spacing: 0;
+						font-size: 20px;
+						line-height: 34px;
+						font-weight: 400;
+						position: relative;
+						top:3px;
+						margin-left:15px;
+					}
+				}
+			}
+		}
+		// account creation
+		li.mycontact_description {
+			margin-bottom:0;
+		}
+		// state select
+		li.mylawyer_state {
+			position: relative;
+			select {
+				display: none;
+			}
+			.select-selected {
+				border: 2px solid #d8d8d8;
+				border-radius: 10px;
+				padding: 5px 20px;
+				line-height: 38px;
+				//background-color: grey;
+			}
+			.select-items div,.select-selected {
+				cursor: pointer;
+				user-select: none;
+			}
+			.select-items {
+				position: relative;
+				border: 2px solid #d8d8d8;
+				border-radius: 10px;
+				background: #fff;
+				top: 8px;
+				width:100%;
+				left: 0;
+				z-index: 1;
+				padding: 20px 0px;
+				display: flex;
+				flex-wrap:wrap;
+				justify-content: space-between;
+				div {
+					padding:0 20px;
+					flex-basis:47%;
+				}
+			}
+			.select-hide {
+				display: none;
+			}
+			.select-items div:hover, .same-as-selected {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		}
+		// featured lawyer
+		li.myfeatured_lawyer {
+			display: none !important;
+		}
+		// profile choice
+		li.myprofile_choice {
+			label.gfield_label {
+				display: none;
+			}
+		}
+		//practice areas
+		li.mypracticeareas {
+			label.gfield_label {
+				display: none;
+			}
+		}
+		// username password
+		li.myusername, li.mypassword {
+			flex-basis:100%;
+			label:not(.gfield_label) {
+				font-size:13px;
+				margin-top:5px;
+				padding-left:20px;
+			}
+			.ginput_right {
+				input {
+					margin-top:18px;
+				}
+			}
+		}
+	}
+	// credit card
+	li.mycreditcard {
+		#input_2_104_5_container, #input_4_101_5_container {
+			display: none;
+		}
+		span.ginput_full {
+			display: block;
+			margin-bottom:25px;
+			span {
+				display: block;
+			}
+			span.ginput_cardinfo_left {
+				margin-bottom: 25px;
+			}
+			span.ginput_cardinfo_right {
+				input {
+					width:120px;
+				}
+			}
+			span.ginput_card_security_code_icon {
+				display: none;
+			}
+		}
+		label {
+/*
+			padding-top:8px;
+			padding-bottom:15px;
+*/
+		}
+		label.gfield_label_before_complex {
+			display: none;
+		}
+	}
+	li.mycountry {
+		display: none;
+	}
+	li.mypracticeareas {
+		
+	
+	.ginput_container_checkbox {
+		ul.gfield_checkbox {
+			//padding-top:25px;
+			> li {
+					flex-basis: 50% !important;
+			}
+		}
+		ul.gfield_checkbox {
+			margin-bottom: 0;
+			li {
+				display: flex;
+				flex-basis:100%;
+				input {
+					flex-shrink:0;
+					margin-right:7px;
+				}
+				label {
+					font-size: 20px;
+					line-height: 26px;
+					font-family: $worksans;
+					font-weight: 600;
+					text-transform: none;
+					letter-spacing: 0;
+					font-weight: 400;
+					margin-left:5px;
+				}
+			}
+		}
+		}
+		
+	}
+	.gfield_description, .validation_message {
+		color:red;
+		font-size: 16px;
+		//letter-spacing: 0.09em;
+		//text-transform: uppercase;
+		line-height: 20px;
+		padding-top:5px;
+		font-family: $worksans;
+	}
+	input[type="submit"] {
+		background: $bluetwo;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding: 15px 30px;
+    display: block;
+    cursor: pointer;
+    margin:0px auto;
+    transition: all 200ms ease-in-out;
+    @include montserrat_extrabold;
+    &:hover {
+	    background: $blue;
+    }
+	}
+}
+
+.mobile_edit {
+	display: none;
+}
+
+
+
+
+[data-type="repeater"] {
+	padding-right:20px;
+	
+ .acf-input ::-webkit-input-placeholder {
+  color: #6d6d6d; }
+.acf-input ::-moz-placeholder {
+  color: #6d6d6d; }
+ .acf-input :-moz-placeholder {
+   color: #6d6d6d; }
+ .acf-input :-ms-input-placeholder {
+   color: #6d6d6d; }
+ .acf-input ::-moz-placeholder {
+    opacity: 1; }
+    
+
+	table {
+		width:100%;
+	}
+	.acf-field {
+		margin-bottom: 0px;
+	}
+	.acf-label {
+		margin-left:32px;
+	}
+	.acf-row-handle {
+		span {
+			position: relative;
+			top:-10px;
+			cursor: move;
+			color:$bluetwo;
+			font-weight: bold;
+			transition: all 200ms ease-in-out;
+		}
+	}
+	 .acf-row {
+		 &:hover {
+			 .remove {
+				 opacity: 1;
+			 }
+		 }
+		.acf-fields {
+			padding-bottom: 20px;
+			.acf-field {
+				margin-bottom: 15px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		
+		}
+		.acf-label {
+			display: none;
+		}
+	}
+	.acf-clone {
+		display: none;
+	}
+	.acf-actions {
+
+		//margin-left:32px;
+		text-align: center;
+
+	}
+	.acf-row.-hover {
+		.remove {
+			opacity: 1;
+			.acf-icon {
+				
+			}
+			.-minus {
+				//position: relative;
+				
+				&:after {
+					content:"remove row?";
+					display: block;
+					position: absolute;
+					width:150px;
+					letter-spacing: 0.1em;
+					top:-7px;
+					text-transform: uppercase;
+					left:-125px;
+					font-size: 12px;
+					color:#fff;
+					background:$bluetwo;
+					cursor: pointer;
+					text-align: center;
+					transition: all 200ms ease-in-out;
+					@include montserrat_extrabold;
+					
+				}
+				&:hover {
+/*
+					&:after {
+						color:red;
+					}
+*/
+					}
+			}
+		}
+	}
+	.remove {
+		position: relative;
+		opacity: 0;
+		transition: all 200ms ease-in-out;
+		.acf-icon {
+			background: #fff;
+			width:22px;
+			height:22px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top:0;
+			left:3px;
+			border:2px solid $bluetwo;
+			&:before {
+				content:"";
+				color:$bluetwo;
+				font-size: 15px;
+				font-weight: bold;
+				display: block;
+				
+			}
+		}
+		.-plus {
+			top:-22px;
+			
+			&:before {
+				content:"+";
+				
+			}
+		}
+		.-minus {
+			top:14px;
+			&:before {
+				content:"-";
+			}
+		}
+	}
+	
+}
+
+
+.show-if-value.image-wrap {
+	img {
+		max-width: 100%;
+		height:auto;
+		display: block;
+	}
+}
+
+
+.upgrade_prompt_wrapper {
+	//position: absolute;
+	top:0px;
+	left:0;
+	width:100%;
+	background: #fff;
+	padding:25px 25px 15px;
+	cursor: pointer;
+	text-align: center;
+	border-bottom:1px solid #e2e2e2;
+}
+
+span.prompt {
+	display: block;
+	margin-bottom: 10px;
+}
+
+
+
+span.upgrade_prompt, span.enable_header {
+	text-transform: uppercase;
+	color:$bluetwo;
+	letter-spacing: 0.2em;
+	font-size: 15px;
+	line-height: 18px;
+	margin-left:auto;
+	margin-right:auto;
+	@include montserrat_extrabold;
+	&:after {
+		content:"";
+		display: inline-block;
+		width: 0; 
+		vertical-align: top;
+		margin:2px 0 0 3px;
+		height: 0; 
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		border-left: 6px solid $bluetwo;
+	}
+}
+
+span.enable_header {
+	padding-bottom:10px;
+	&:after {
+		display: none;
+	}
+}
+
+span.enable_subheader {
+	font-family: "Work Sans",sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+span.enable {
+	color:$bluetwo;
+	&:hover {
+	  text-decoration: underline;
+  }
+}
+
+
+[data-name="disable_case_results_section"] {
+	padding-left:25px;
+}
+
+
+@media screen and (max-width: 1066px) {
+	
+	
+	.update_custom_form {
+		top:97px;
+	}
+	
+	.myedit, .att_bio_selling_point_inner.myedit {
+		position: relative;
+		> span.edit_icon {
+			opacity: 1;
+			visibility: visible;
+			position: absolute;
+			width:100%;
+			height:100%;
+			background: transparent;
+			//background:red;
+		}
+	}
+	
+	
+	
+.myedit.edit_inline {
+	padding-bottom: 10px;
+	position: relative;
+	> span.edit_icon {
+		position: absolute;
+		display: block;
+		margin-left:0px;
+		top:0px;
+	}
+}
+
+
+.mobile_edit {
+	display: block;
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	background: $bluetwo;
+	text-align: center;
+	padding: 11px 10px;
+	opacity: 1;
+	visibility: visible;
+	transition: all 200ms ease-in-out;
+	span {
+		text-transform: uppercase;
+		display: block;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    @include montserrat_extrabold;
+	}
+}
+
+.mobile_edit.fadeout {
+	opacity: 0;
+	visibility: hidden;
+}
+	
+	
+	
+} /* Media Query */
+
+
+@media screen and (max-width: 835px) {
+	
+	
+	
+	.update_custom_form {
+		display: block;
+		.update_custom_form_left {
+			display: none;
+		}
+		.update_custom_form_right {
+			width:100%;
+			height:100vh;
+			box-shadow: none;
+			padding: 25px 30px 100px;
+		}
+	}
+	
+	body.single-lawyer {
+		#internal_main.blur {
+			filter: blur(0px);
+			-webkit-filter: blur(0px);
+		}
+	}
+	
+	
+} /* Media Query */
+
+@media screen and (max-width: 767px) {
+	
+	
+	.update_custom_form {
+		top:79px;
+		.update_custom_form_right {
+			padding: 25px 30px 100px;
+		}
+	}
+	
+		
+	.internal_banner_content {
+		.myedit.edit_content.edit_banner_meta {
+			padding-bottom: 5px;
+		}
+	}
+	
+	
+	
+	span.upgrade_prompt {
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	
+	
+} /* Media Query */
+
+
+@media screen and (max-width: 580px) {
+	
+	
+	.update_custom_form ul li.mylawyer_state .select-items {
+		display: block;
+	}
+	
+	.update_custom_form {
+		ul {
+			li.mylawyer_state {
+				.select-items {
+					display: block;
+				}
+			}
+		}
+	}
+	
+	
+	.update_custom_form ul li.mylawyer_state .select-hide {
+    display: none;
+}
+
+
+span.enable_header {
+	max-width:300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+	
+	
+	
+} /* Media Query */
+	
+	
+	
+	
+	@media screen and (max-width: 515px) {
+		
+		
+		span.upgrade_prompt {
+			max-width:350px;
+		}
+		
+		
+	} /* Media Query */
+
