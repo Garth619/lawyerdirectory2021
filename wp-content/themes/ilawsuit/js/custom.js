@@ -999,7 +999,7 @@ $('.sec_three_tab').on('click', function(e) {
 		var address_plus = address.replace(/\s/g , "+");
 		
 		$.ajax({
-			url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+address_plus+'&key=AIzaSyBxrP4KivR3OsTV9Rvy8OuTv6PBJtjk4R4',
+			url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+address_plus+'&key=AIzaSyChzxFAVcjAp_u54o_pMNaKQhkBnfJsbzc',
 		  dataType: 'json',
 		  success: function(json) {
 		    //console.log(json.results[0].geometry.location.lat);
@@ -1024,11 +1024,11 @@ $('.sec_three_tab').on('click', function(e) {
 		var address_plus = address.replace(/\s/g , "+");
 		
 		$.ajax({
-			url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+address_plus+'&key=AIzaSyBxrP4KivR3OsTV9Rvy8OuTv6PBJtjk4R4',
+			url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+address_plus+'&key=AIzaSyChzxFAVcjAp_u54o_pMNaKQhkBnfJsbzc',
 		  dataType: 'json',
 		  success: function(json) {
-		    //console.log(json.results[0].geometry.location.lat);
-		    //console.log(json.results[0].geometry.location.lng);
+		    console.log(json.results[0].geometry.location.lat);
+		    console.log(json.results[0].geometry.location.lng);
 		            
 		    var mylat = json.results[0].geometry.location.lat;
 		    var mylong = json.results[0].geometry.location.lng;
