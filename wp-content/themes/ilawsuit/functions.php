@@ -79,11 +79,28 @@ function load_my_styles_scripts()
             $mapaddress = $citytermtitle . ',' . $statetermtitle;
             $prepAddr = str_replace(' ', '+', $mapaddress);
 
-            $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&key=' . $google_map_api . '');
+            // $geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&key=' . $google_map_api . '');
 
-            $output = json_decode($geocode);
-            $city_latitude = $output->results[0]->geometry->location->lat;
-            $city_longitude = $output->results[0]->geometry->location->lng;
+            // $output = json_decode($geocode);
+            // $city_latitude = $output->results[0]->geometry->location->lat;
+            // $city_longitude = $output->results[0]->geometry->location->lng;
+
+            // had to use curl her on flywheel for some reason
+
+            $url = 'https://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&key=' . $google_map_api . '';
+            $ch = curl_init(); //initiating cURL
+            curl_setopt($ch, CURLOPT_URL, $url); // CALLING THE URL
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            $response = curl_exec($ch);
+
+            $response = json_decode($response);
+            $city_latitude = $response->results[0]->geometry->location->lat;
+            $city_longitude = $response->results[0]->geometry->location->lng;
+
+            //print_r($lat);
 
         }
 
@@ -2321,13 +2338,13 @@ function form_submit_button($button, $form)
 
     $dom = new DOMDocument();
     $dom->loadHTML('<?xml encoding="utf-8" ?>' . $button);
-    $input = $dom->getElementsByTagName('input')->item(0);
-    $onclick = $input->getAttribute('onclick');
-    $onclick .= "document.getElementById('prepare').classList.add('fadein');var elems =
+$input = $dom->getElementsByTagName('input')->item(0);
+$onclick = $input->getAttribute('onclick');
+$onclick .= "document.getElementById('prepare').classList.add('fadein');var elems =
 document.querySelectorAll('.gform_wrapper');[].forEach.call(elems, function(el)
 {el.classList.remove('gform_validation_error')})"; // Here's the JS function we're calling on click.
-    $input->setAttribute('onclick', $onclick);
-    return $dom->saveHtml($input);
+$input->setAttribute('onclick', $onclick);
+return $dom->saveHtml($input);
 
 //document.getElementsByClassName('gform_wrapper_2').classList.remove('gform_validation_error');
 
@@ -2340,16 +2357,16 @@ add_action('gform_user_registered', 'autologin', 10, 4);
 function autologin($user_id, $user_config, $entry, $password)
 {
 
-    $user = get_userdata($user_id);
-    $user_login = $user->user_login;
-    $user_password = $password;
-    $user->set_role(get_option('default_role', 'subscriber'));
+$user = get_userdata($user_id);
+$user_login = $user->user_login;
+$user_password = $password;
+$user->set_role(get_option('default_role', 'subscriber'));
 
-    wp_signon(array(
-        'user_login' => $user_login,
-        'user_password' => $user_password,
-        'remember' => true,
-    ));
+wp_signon(array(
+'user_login' => $user_login,
+'user_password' => $user_password,
+'remember' => true,
+));
 
 }
 
@@ -2360,9 +2377,9 @@ add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar()
 {
 
-    if (!current_user_can('administrator') && !is_admin()) {
-        show_admin_bar(false);
-    }
+if (!current_user_can('administrator') && !is_admin()) {
+show_admin_bar(false);
+}
 
 }
 
@@ -2371,16 +2388,16 @@ add_action('wp_login_failed', 'login_fail'); // hook failed login
 function login_fail($username)
 {
 
-    $referrer = $_SERVER['HTTP_REFERER']; // where did the post submission come from?
-    // if there's a valid referrer, and it's not the default log-in screen
-    if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
+$referrer = $_SERVER['HTTP_REFERER']; // where did the post submission come from?
+// if there's a valid referrer, and it's not the default log-in screen
+if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
 
-        wp_safe_redirect(get_bloginfo('url') . '/login/?login=failed');
+wp_safe_redirect(get_bloginfo('url') . '/login/?login=failed');
 
 // let's append some information (login=logged-out) to the URL for the theme to use
 
-        exit;
-    }
+exit;
+}
 }
 
 add_action('authenticate', 'check_username_password', 1, 3);
@@ -2388,15 +2405,15 @@ function check_username_password($login, $username, $password)
 {
 
 // Getting URL of the login page
-    $referrer = $_SERVER['HTTP_REFERER'];
+$referrer = $_SERVER['HTTP_REFERER'];
 
 // if there's a valid referrer, and it's not the default log-in screen
-    if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
-        if ($username == "" || $password == "") {
-            wp_safe_redirect(get_bloginfo('url') . '/login/?login=loggedout');
-            exit;
-        }
-    }
+if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
+if ($username == "" || $password == "") {
+wp_safe_redirect(get_bloginfo('url') . '/login/?login=loggedout');
+exit;
+}
+}
 
 }
 
@@ -2404,46 +2421,46 @@ function my_login_redirect($redirect_to, $request, $user)
 {
 
 //is there a user to check?
-    if (isset($user->roles) && is_array($user->roles)) {
+if (isset($user->roles) && is_array($user->roles)) {
 //check for admins
-        if (in_array('administrator', $user->roles)) {
+if (in_array('administrator', $user->roles)) {
 // redirect them to the default place
 
-            $mydashboard = get_bloginfo('url') . '/wp-admin';
+$mydashboard = get_bloginfo('url') . '/wp-admin';
 
-            return $mydashboard;
+return $mydashboard;
 
-        } else {
+} else {
 
-            $user_id = $user->ID;
+$user_id = $user->ID;
 
-            $author_args = array(
-                'posts_per_page' => 1,
-                'post_type' => 'lawyer',
-                'post_status' => 'publish',
-                'author' => $user_id,
-                'orderby' => 'date',
-                'order' => 'ASC',
-            );
+$author_args = array(
+'posts_per_page' => 1,
+'post_type' => 'lawyer',
+'post_status' => 'publish',
+'author' => $user_id,
+'orderby' => 'date',
+'order' => 'ASC',
+);
 
-            $first_post = new WP_Query($author_args);while ($first_post->have_posts()): $first_post->the_post();
+$first_post = new WP_Query($author_args);while ($first_post->have_posts()): $first_post->the_post();
 
-                $post_redirect[] = get_the_ID();
+$post_redirect[] = get_the_ID();
 
-            endwhile;
+endwhile;
 
-            wp_reset_postdata(); // reset the query
+wp_reset_postdata(); // reset the query
 
-            $url_id = reset($post_redirect);
+$url_id = reset($post_redirect);
 
-            $url = get_bloginfo('url') . "/lawyer/?p=" . $url_id;
+$url = get_bloginfo('url') . "/lawyer/?p=" . $url_id;
 
-            return $url;
+return $url;
 
-        }
-    } else {
-        return $redirect_to;
-    }
+}
+} else {
+return $redirect_to;
+}
 }
 
 add_filter('login_redirect', 'my_login_redirect', 10, 3);
@@ -2451,16 +2468,16 @@ add_filter('login_redirect', 'my_login_redirect', 10, 3);
 //add_filter("gform_confirmation_anchor", create_function("","return 300;"));
 
 add_filter('gform_confirmation_anchor_2', function () {
-    return 0;
+return 0;
 });
 
 add_filter('gform_confirmation_anchor_4', function () {
-    return 300;
+return 300;
 });
 
 function custom_login_logo()
 {
-    echo '<style type="text/css">
+echo '<style type="text/css">
 .login h1 a {
   display: none !important;
 }
@@ -2473,7 +2490,7 @@ add_action('login_head', 'custom_login_logo');
 
 function unqueue_af_css()
 {
-    wp_deregister_style('acf-input');
+wp_deregister_style('acf-input');
 }
 add_action('wp_enqueue_scripts', 'unqueue_af_css', 9999);
 
@@ -2500,4 +2517,4 @@ return $confirmation;
 //{embed_post:ID}
 
 }
- */
+*/

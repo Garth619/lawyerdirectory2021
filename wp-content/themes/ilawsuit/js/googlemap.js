@@ -109,6 +109,7 @@ function initMap() {
         
         
 		var lat_number = parseFloat(my_mapdata.map_current_city_latitude);
+        
     var long_number = parseFloat(my_mapdata.map_current_city_longitude);
 	
 
